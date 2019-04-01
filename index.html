@@ -4,11 +4,27 @@
 <head>
   <meta charset="utf-8" />
   <title>NJUJB.ICU</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/0.6.1/marked.min.js"></script>
 </head>
 
 <body>
-  <div id="content"></div>
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col col-xl-6 col-md-8 col-12 mx-auto">
+        <div class="card bg-light mb-3">
+          <div class="card-body">
+            <div id="content"></div>
+          </div>
+        </div>
+        <footer class="footer">
+          <p id="copyright"></p>
+        </footer>
+      </div>
+    </div>
+
+  </div>
   <script>
     function httpGetAsync(theUrl, callback) {
       var xmlHttp = new XMLHttpRequest();
@@ -23,7 +39,9 @@
       document.getElementById('content').innerHTML =
         marked(text);
     }
-    httpGetAsync("./README.md", setMarkdownText);
+    httpGetAsync("https://njujb-icu.github.io/NJUJB.ICU/README.md", setMarkdownText);
+    var date = new Date();
+    document.getElementById('copyright').innerHTML = "&copy; " + date.getFullYear() + " NJUJB.ICU Project";
   </script>
 </body>
 
