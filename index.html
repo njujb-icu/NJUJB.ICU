@@ -42,7 +42,7 @@
       document.getElementById('content').innerHTML =
         marked(text);
     }
-    httpGetAsync("https://njujb-icu.github.io/NJUJB.ICU/README.md", setMarkdownText);
+    httpGetAsync("./README.md", setMarkdownText);
     var date = new Date();
     document.getElementById('copyright').innerHTML = "&copy; " + date.getFullYear() + " NJUJB.ICU Project";
   </script>
